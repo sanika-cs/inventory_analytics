@@ -1,0 +1,165 @@
+{
+  "name": "Item Classification",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "module": "Inventory Analytics",
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "label": "Item Code",
+      "fieldtype": "Link",
+      "options": "Item",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "item_name",
+      "label": "Item Name",
+      "fieldtype": "Data",
+      "fetch_from": "item_code.item_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "classification",
+      "label": "Classification",
+      "fieldtype": "Select",
+      "options": "FAST\nSLOW\nMEDIUM\nDEAD_STOCK\nNEW_ITEM",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_metrics",
+      "fieldtype": "Section Break",
+      "label": "Key Metrics (90 days)"
+    },
+    {
+      "fieldname": "velocity_90d",
+      "label": "Velocity (units/day)",
+      "fieldtype": "Float",
+      "description": "Average daily sales"
+    },
+    {
+      "fieldname": "turnover_rate",
+      "label": "Turnover Rate (x/year)",
+      "fieldtype": "Float",
+      "description": "Times stock rotates per year"
+    },
+    {
+      "fieldname": "qty_90d",
+      "label": "Quantity Sold (90d)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "transaction_count",
+      "label": "Transaction Count",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "avg_transaction_qty",
+      "label": "Avg Transaction Qty",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "days_of_stock",
+      "label": "Days of Stock",
+      "fieldtype": "Float",
+      "description": "Current stock ÷ daily demand"
+    },
+    {
+      "fieldname": "section_sales",
+      "fieldtype": "Section Break",
+      "label": "Sales Performance"
+    },
+    {
+      "fieldname": "total_qty_sold",
+      "label": "Total Qty Sold (lifetime)",
+      "fieldtype": "Float",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_sales_value",
+      "label": "Total Sales Value (₹)",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_sale_date",
+      "label": "Last Sale Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "days_since_last_sale",
+      "label": "Days Since Last Sale",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_stock",
+      "fieldtype": "Section Break",
+      "label": "Stock Status"
+    },
+    {
+      "fieldname": "current_stock",
+      "label": "Current Stock",
+      "fieldtype": "Float",
+      "fetch_from": "item_code.stock_qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_value",
+      "label": "Stock Value (₹)",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "avg_valuation_rate",
+      "label": "Avg Valuation Rate",
+      "fieldtype": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_trend",
+      "fieldtype": "Section Break",
+      "label": "Trend Analysis"
+    },
+    {
+      "fieldname": "trend_7d",
+      "label": "Trend (7d vs 8-14d)",
+      "fieldtype": "Select",
+      "options": "UP\nDOWN\nFLAT"
+    },
+    {
+      "fieldname": "trend_30d",
+      "label": "Trend (30d vs prior 30d)",
+      "fieldtype": "Select",
+      "options": "UP\nDOWN\nFLAT"
+    },
+    {
+      "fieldname": "growth_percentage",
+      "label": "Growth %",
+      "fieldtype": "Percent"
+    },
+    {
+      "fieldname": "section_analysis",
+      "fieldtype": "Section Break",
+      "label": "Analysis Info"
+    },
+    {
+      "fieldname": "analysis_date",
+      "label": "Analysis Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "created_from_notebook",
+      "label": "Created From Notebook",
+      "fieldtype": "Data",
+      "default": "Notebook 2: DBSCAN Classification"
+    }
+  ],
+  "icon": "icon-tag",
+  "color": "#4caf50",
+  "search_fields": "item_code,item_name,classification",
+  "quick_entry": 0
+}

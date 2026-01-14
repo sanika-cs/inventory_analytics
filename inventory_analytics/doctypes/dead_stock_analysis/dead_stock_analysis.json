@@ -1,0 +1,203 @@
+{
+  "name": "Dead Stock Analysis",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "module": "Inventory Analytics",
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "label": "Item Code",
+      "fieldtype": "Link",
+      "options": "Item",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "item_name",
+      "label": "Item Name",
+      "fieldtype": "Data",
+      "fetch_from": "item_code.item_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_deadstock",
+      "fieldtype": "Section Break",
+      "label": "Dead Stock Status"
+    },
+    {
+      "fieldname": "days_since_last_sale",
+      "label": "Days Since Last Sale",
+      "fieldtype": "Int",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_sale_date",
+      "label": "Last Sale Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "age_years",
+      "label": "Dead Stock Age (years)",
+      "fieldtype": "Float",
+      "description": "Time inventory has been dead"
+    },
+    {
+      "fieldname": "section_value",
+      "fieldtype": "Section Break",
+      "label": "Value Analysis"
+    },
+    {
+      "fieldname": "current_stock",
+      "label": "Current Stock",
+      "fieldtype": "Float",
+      "fetch_from": "item_code.stock_qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_value",
+      "label": "Stock Value (₹)",
+      "fieldtype": "Currency",
+      "description": "Current market value"
+    },
+    {
+      "fieldname": "original_value",
+      "label": "Original Purchase Value (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "holding_cost_total",
+      "label": "Total Holding Cost (₹)",
+      "fieldtype": "Currency",
+      "description": "Cost to hold until now"
+    },
+    {
+      "fieldname": "holding_cost_annual",
+      "label": "Annual Holding Cost (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "section_liquidation",
+      "fieldtype": "Section Break",
+      "label": "Liquidation Strategy"
+    },
+    {
+      "fieldname": "liquidation_strategy",
+      "label": "Liquidation Strategy",
+      "fieldtype": "Select",
+      "options": "DEEP_DISCOUNT\nCLEARANCE\nDONATION\nWRITE_OFF",
+      "description": "Recommended liquidation approach"
+    },
+    {
+      "fieldname": "discount_percentage",
+      "label": "Discount % (Strategy)",
+      "fieldtype": "Percent",
+      "description": "Recommended discount level"
+    },
+    {
+      "fieldname": "recovery_percentage",
+      "label": "Recovery %",
+      "fieldtype": "Percent",
+      "description": "Expected recovery of stock value"
+    },
+    {
+      "fieldname": "recovery_value",
+      "label": "Potential Recovery (₹)",
+      "fieldtype": "Currency",
+      "description": "Expected liquidation proceeds"
+    },
+    {
+      "fieldname": "liquidity_score",
+      "label": "Liquidity Score (0-100)",
+      "fieldtype": "Int",
+      "description": "Ease of liquidation"
+    },
+    {
+      "fieldname": "timeline_months",
+      "label": "Liquidation Timeline (months)",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "section_root",
+      "fieldtype": "Section Break",
+      "label": "Root Cause Analysis"
+    },
+    {
+      "fieldname": "probable_causes",
+      "label": "Probable Causes",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "category_issue",
+      "label": "Category Issue",
+      "fieldtype": "Select",
+      "options": "OBSOLESCENCE\nSLOW_DEMAND\nOVERSTOCK\nPOOR_FORECAST\nMARKET_CHANGE\nUNCLAR"
+    },
+    {
+      "fieldname": "section_action",
+      "fieldtype": "Section Break",
+      "label": "Action Plan"
+    },
+    {
+      "fieldname": "priority",
+      "label": "Priority",
+      "fieldtype": "Select",
+      "options": "CRITICAL\nHIGH\nMEDIUM\nLOW",
+      "description": "Liquidation priority"
+    },
+    {
+      "fieldname": "action_status",
+      "label": "Action Status",
+      "fieldtype": "Select",
+      "options": "PENDING\nIN_PROGRESS\nCOMPLETED"
+    },
+    {
+      "fieldname": "action_plan",
+      "label": "Action Plan",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "target_clearance_date",
+      "label": "Target Clearance Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "responsible_person",
+      "label": "Responsible Person",
+      "fieldtype": "Link",
+      "options": "User"
+    },
+    {
+      "fieldname": "section_financial",
+      "fieldtype": "Section Break",
+      "label": "Financial Impact"
+    },
+    {
+      "fieldname": "impact_quarterly",
+      "label": "Quarterly Impact",
+      "fieldtype": "Select",
+      "options": "IMMEDIATE\nQ1\nQ2\nQ3\nQ4"
+    },
+    {
+      "fieldname": "roi_recovery",
+      "label": "ROI of Recovery",
+      "fieldtype": "Percent"
+    },
+    {
+      "fieldname": "section_analysis",
+      "fieldtype": "Section Break",
+      "label": "Analysis Info"
+    },
+    {
+      "fieldname": "analysis_date",
+      "label": "Analysis Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    }
+  ],
+  "icon": "icon-trash",
+  "color": "#f44336",
+  "search_fields": "item_code,item_name,priority",
+  "quick_entry": 0
+}

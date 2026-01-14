@@ -1,0 +1,92 @@
+{
+  "name": "Inventory Analytics Dashboard",
+  "doctype": "Dashboard",
+  "dashboard_name": "Inventory Analytics Dashboard",
+  "charts": [
+    {
+      "name": "Classification Breakdown",
+      "chart_name": "Item Classification Breakdown",
+      "width": "full"
+    },
+    {
+      "name": "Inventory Health KPI",
+      "chart_name": "Inventory Health Metrics",
+      "width": "half"
+    },
+    {
+      "name": "Demand Forecast",
+      "chart_name": "Demand Pattern Distribution",
+      "width": "half"
+    },
+    {
+      "name": "Dead Stock Impact",
+      "chart_name": "Dead Stock Value Distribution",
+      "width": "half"
+    },
+    {
+      "name": "New Items Performance",
+      "chart_name": "New Items Health Status",
+      "width": "half"
+    },
+    {
+      "name": "Days of Stock",
+      "chart_name": "Days of Stock Distribution",
+      "width": "full"
+    },
+    {
+      "name": "Critical Alerts",
+      "chart_name": "Critical Inventory Alerts",
+      "width": "full"
+    }
+  ],
+  "cards": [
+    {
+      "name": "Total Items",
+      "label": "Total Items Analyzed",
+      "indicator": "Total items across all classifications",
+      "color": "#4caf50"
+    },
+    {
+      "name": "Active Items",
+      "label": "Active Items (FAST+SLOW+MEDIUM)",
+      "indicator": "High priority items needing attention",
+      "color": "#2196f3"
+    },
+    {
+      "name": "Dead Stock Items",
+      "label": "Dead Stock Items",
+      "indicator": "Items needing liquidation",
+      "color": "#f44336"
+    },
+    {
+      "name": "New Items",
+      "label": "New Items (< 90 days)",
+      "indicator": "New product pipeline",
+      "color": "#ff9800"
+    },
+    {
+      "name": "Total Stock Value",
+      "label": "Total Stock Value (₹)",
+      "indicator": "Current inventory value",
+      "color": "#4caf50"
+    },
+    {
+      "name": "Dead Stock Value",
+      "label": "Dead Stock Value (₹)",
+      "indicator": "Blocked capital in dead stock",
+      "color": "#f44336"
+    },
+    {
+      "name": "Below ROP",
+      "label": "Items Below ROP",
+      "indicator": "Urgent ordering needed",
+      "color": "#ff5722"
+    },
+    {
+      "name": "At Risk Items",
+      "label": "Items At Risk",
+      "indicator": "New items needing intervention",
+      "color": "#ff9800"
+    }
+  ]
+}

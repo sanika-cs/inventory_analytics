@@ -1,0 +1,237 @@
+{
+  "name": "New Item Health Report",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "module": "Inventory Analytics",
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "label": "Item Code",
+      "fieldtype": "Link",
+      "options": "Item",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "item_name",
+      "label": "Item Name",
+      "fieldtype": "Data",
+      "fetch_from": "item_code.item_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_life",
+      "fieldtype": "Section Break",
+      "label": "Item Life Cycle"
+    },
+    {
+      "fieldname": "days_since_creation",
+      "label": "Days Since Creation",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "life_stage",
+      "label": "Life Stage",
+      "fieldtype": "Select",
+      "options": "LAUNCH\nLEARNING\nGRADUATION",
+      "description": "0-30d: LAUNCH, 31-60d: LEARNING, 61-90d: GRADUATION"
+    },
+    {
+      "fieldname": "creation_date",
+      "label": "Creation Date",
+      "fieldtype": "Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_health",
+      "fieldtype": "Section Break",
+      "label": "Health Assessment"
+    },
+    {
+      "fieldname": "health_score",
+      "label": "Health Score (0-100)",
+      "fieldtype": "Int",
+      "reqd": 1,
+      "description": "Overall health metric"
+    },
+    {
+      "fieldname": "health_status",
+      "label": "Health Status",
+      "fieldtype": "Select",
+      "options": "HEALTHY\nAT_RISK\nCRITICAL",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_performance_score",
+      "label": "Sales Performance Score",
+      "fieldtype": "Int",
+      "description": "40% weight"
+    },
+    {
+      "fieldname": "customer_acquisition_score",
+      "label": "Customer Acquisition Score",
+      "fieldtype": "Int",
+      "description": "30% weight"
+    },
+    {
+      "fieldname": "stock_adequacy_score",
+      "label": "Stock Adequacy Score",
+      "fieldtype": "Int",
+      "description": "20% weight"
+    },
+    {
+      "fieldname": "growth_trend_score",
+      "label": "Growth Trend Score",
+      "fieldtype": "Int",
+      "description": "10% weight"
+    },
+    {
+      "fieldname": "section_sales",
+      "fieldtype": "Section Break",
+      "label": "Sales Analysis"
+    },
+    {
+      "fieldname": "target_units",
+      "label": "Sales Target (units)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "actual_units",
+      "label": "Actual Sales (units)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "target_achievement_pct",
+      "label": "Target Achievement %",
+      "fieldtype": "Percent"
+    },
+    {
+      "fieldname": "target_revenue",
+      "label": "Revenue Target (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "actual_revenue",
+      "label": "Actual Revenue (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "qty_7d",
+      "label": "Sales (7d)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "qty_14d",
+      "label": "Sales (14d)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "qty_30d",
+      "label": "Sales (30d)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "section_customers",
+      "fieldtype": "Section Break",
+      "label": "Customer Acquisition"
+    },
+    {
+      "fieldname": "unique_customers",
+      "label": "Unique Customers",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "customer_growth_pct",
+      "label": "Customer Growth %",
+      "fieldtype": "Percent"
+    },
+    {
+      "fieldname": "avg_order_value",
+      "label": "Avg Order Value (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "section_stock",
+      "fieldtype": "Section Break",
+      "label": "Stock Analysis"
+    },
+    {
+      "fieldname": "current_stock",
+      "label": "Current Stock",
+      "fieldtype": "Float",
+      "fetch_from": "item_code.stock_qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_value",
+      "label": "Stock Value (₹)",
+      "fieldtype": "Currency"
+    },
+    {
+      "fieldname": "days_of_stock",
+      "label": "Days of Stock",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "stockout_risk",
+      "label": "Stockout Risk",
+      "fieldtype": "Select",
+      "options": "NONE\nLOW\nMEDIUM\nHIGH"
+    },
+    {
+      "fieldname": "section_trend",
+      "fieldtype": "Section Break",
+      "label": "Growth & Trend"
+    },
+    {
+      "fieldname": "growth_percentage",
+      "label": "Growth % (vs prior period)",
+      "fieldtype": "Percent"
+    },
+    {
+      "fieldname": "trend_direction",
+      "label": "Trend",
+      "fieldtype": "Select",
+      "options": "UP\nDOWN\nFLAT"
+    },
+    {
+      "fieldname": "momentum",
+      "label": "Momentum",
+      "fieldtype": "Select",
+      "options": "POSITIVE\nNEUTRAL\nNEGATIVE"
+    },
+    {
+      "fieldname": "section_recommendation",
+      "fieldtype": "Section Break",
+      "label": "Recommendations"
+    },
+    {
+      "fieldname": "recommendation",
+      "label": "Recommendation",
+      "fieldtype": "Small Text",
+      "description": "Action items and next steps"
+    },
+    {
+      "fieldname": "action_priority",
+      "label": "Action Priority",
+      "fieldtype": "Select",
+      "options": "URGENT\nHIGH\nMEDIUM\nLOW"
+    },
+    {
+      "fieldname": "section_analysis",
+      "fieldtype": "Section Break",
+      "label": "Analysis Info"
+    },
+    {
+      "fieldname": "analysis_date",
+      "label": "Analysis Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    }
+  ],
+  "icon": "icon-heart",
+  "color": "#e91e63",
+  "search_fields": "item_code,item_name,health_status",
+  "quick_entry": 0
+}

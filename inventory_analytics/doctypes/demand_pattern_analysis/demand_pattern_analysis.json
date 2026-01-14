@@ -1,0 +1,168 @@
+{
+  "name": "Demand Pattern Analysis",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "module": "Inventory Analytics",
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "label": "Item Code",
+      "fieldtype": "Link",
+      "options": "Item",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "item_name",
+      "label": "Item Name",
+      "fieldtype": "Data",
+      "fetch_from": "item_code.item_name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "classification",
+      "label": "Item Classification",
+      "fieldtype": "Select",
+      "options": "FAST\nSLOW\nMEDIUM"
+    },
+    {
+      "fieldname": "section_pattern",
+      "fieldtype": "Section Break",
+      "label": "Demand Pattern (SBC Method)"
+    },
+    {
+      "fieldname": "demand_pattern",
+      "label": "Demand Pattern",
+      "fieldtype": "Select",
+      "options": "SMOOTH\nERRATIC\nINTERMITTENT\nLUMPY",
+      "reqd": 1,
+      "description": "Syntetos-Boylan-Croston classification"
+    },
+    {
+      "fieldname": "adi",
+      "label": "ADI (Average Demand Interval)",
+      "fieldtype": "Float",
+      "description": "Days between sales transactions"
+    },
+    {
+      "fieldname": "cv_squared",
+      "label": "CV² (Coefficient of Variation²)",
+      "fieldtype": "Float",
+      "description": "Demand variability metric"
+    },
+    {
+      "fieldname": "demand_size",
+      "label": "Demand Size",
+      "fieldtype": "Float",
+      "description": "Average transaction quantity"
+    },
+    {
+      "fieldname": "section_forecast",
+      "fieldtype": "Section Break",
+      "label": "Forecast & Recommendations"
+    },
+    {
+      "fieldname": "qty_30d",
+      "label": "Actual Sales (30d)",
+      "fieldtype": "Float"
+    },
+    {
+      "fieldname": "forecast_30d",
+      "label": "Forecasted Demand (30d)",
+      "fieldtype": "Float",
+      "description": "Next 30 days forecast"
+    },
+    {
+      "fieldname": "forecast_mad",
+      "label": "Forecast MAD",
+      "fieldtype": "Float",
+      "description": "Mean Absolute Deviation (accuracy)"
+    },
+    {
+      "fieldname": "safety_stock",
+      "label": "Safety Stock (units)",
+      "fieldtype": "Float",
+      "description": "Buffer inventory needed"
+    },
+    {
+      "fieldname": "reorder_point",
+      "label": "Reorder Point (ROP)",
+      "fieldtype": "Float",
+      "description": "When to place order"
+    },
+    {
+      "fieldname": "recommended_order_qty",
+      "label": "Recommended Order Qty",
+      "fieldtype": "Float",
+      "description": "How much to order"
+    },
+    {
+      "fieldname": "section_stock",
+      "fieldtype": "Section Break",
+      "label": "Stock Status"
+    },
+    {
+      "fieldname": "current_stock",
+      "label": "Current Stock",
+      "fieldtype": "Float",
+      "fetch_from": "item_code.stock_qty",
+      "read_only": 1
+    },
+    {
+      "fieldname": "stock_status",
+      "label": "Stock Status",
+      "fieldtype": "Select",
+      "options": "BELOW_ROP\nOK\nABOVE_MAX",
+      "read_only": 1
+    },
+    {
+      "fieldname": "days_until_stockout",
+      "label": "Days Until Stockout",
+      "fieldtype": "Float",
+      "description": "Projected stockout timeline"
+    },
+    {
+      "fieldname": "section_order",
+      "fieldtype": "Section Break",
+      "label": "Order Details"
+    },
+    {
+      "fieldname": "order_priority",
+      "label": "Order Priority",
+      "fieldtype": "Select",
+      "options": "URGENT\nHIGH\nMEDIUM\nLOW"
+    },
+    {
+      "fieldname": "order_value",
+      "label": "Order Value (₹)",
+      "fieldtype": "Currency",
+      "description": "Recommended order qty × unit rate"
+    },
+    {
+      "fieldname": "recommended_order_date",
+      "label": "Recommended Order Date",
+      "fieldtype": "Date"
+    },
+    {
+      "fieldname": "avg_lead_time_days",
+      "label": "Avg Lead Time (days)",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "section_analysis",
+      "fieldtype": "Section Break",
+      "label": "Analysis Info"
+    },
+    {
+      "fieldname": "analysis_date",
+      "label": "Analysis Date",
+      "fieldtype": "Date",
+      "reqd": 1
+    }
+  ],
+  "icon": "icon-line-chart",
+  "color": "#ff9800",
+  "search_fields": "item_code,item_name,demand_pattern",
+  "quick_entry": 0
+}
