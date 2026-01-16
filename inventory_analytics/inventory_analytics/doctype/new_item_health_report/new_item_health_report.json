@@ -1,0 +1,297 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "color": "#e91e63",
+ "creation": "2026-01-15 08:50:24.927058",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "section_life",
+  "days_since_creation",
+  "life_stage",
+  "creation_date",
+  "section_health",
+  "health_score",
+  "health_status",
+  "sales_performance_score",
+  "customer_acquisition_score",
+  "stock_adequacy_score",
+  "growth_trend_score",
+  "section_sales",
+  "target_units",
+  "actual_units",
+  "target_achievement_pct",
+  "target_revenue",
+  "actual_revenue",
+  "qty_7d",
+  "qty_14d",
+  "qty_30d",
+  "section_customers",
+  "unique_customers",
+  "customer_growth_pct",
+  "avg_order_value",
+  "section_stock",
+  "current_stock",
+  "stock_value",
+  "days_of_stock",
+  "stockout_risk",
+  "section_trend",
+  "growth_percentage",
+  "trend_direction",
+  "momentum",
+  "section_recommendation",
+  "recommendation",
+  "action_priority",
+  "section_analysis",
+  "analysis_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_life",
+   "fieldtype": "Section Break",
+   "label": "Item Life Cycle"
+  },
+  {
+   "fieldname": "days_since_creation",
+   "fieldtype": "Int",
+   "label": "Days Since Creation"
+  },
+  {
+   "description": "0-30d: LAUNCH, 31-60d: LEARNING, 61-90d: GRADUATION",
+   "fieldname": "life_stage",
+   "fieldtype": "Select",
+   "label": "Life Stage",
+   "options": "LAUNCH\nLEARNING\nGRADUATION"
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Creation Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_health",
+   "fieldtype": "Section Break",
+   "label": "Health Assessment"
+  },
+  {
+   "description": "Overall health metric",
+   "fieldname": "health_score",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Health Score (0-100)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "health_status",
+   "fieldtype": "Select",
+   "label": "Health Status",
+   "options": "HEALTHY\nAT_RISK\nCRITICAL",
+   "read_only": 1
+  },
+  {
+   "description": "40% weight",
+   "fieldname": "sales_performance_score",
+   "fieldtype": "Int",
+   "label": "Sales Performance Score"
+  },
+  {
+   "description": "30% weight",
+   "fieldname": "customer_acquisition_score",
+   "fieldtype": "Int",
+   "label": "Customer Acquisition Score"
+  },
+  {
+   "description": "20% weight",
+   "fieldname": "stock_adequacy_score",
+   "fieldtype": "Int",
+   "label": "Stock Adequacy Score"
+  },
+  {
+   "description": "10% weight",
+   "fieldname": "growth_trend_score",
+   "fieldtype": "Int",
+   "label": "Growth Trend Score"
+  },
+  {
+   "fieldname": "section_sales",
+   "fieldtype": "Section Break",
+   "label": "Sales Analysis"
+  },
+  {
+   "fieldname": "target_units",
+   "fieldtype": "Float",
+   "label": "Sales Target (units)"
+  },
+  {
+   "fieldname": "actual_units",
+   "fieldtype": "Float",
+   "label": "Actual Sales (units)"
+  },
+  {
+   "fieldname": "target_achievement_pct",
+   "fieldtype": "Percent",
+   "label": "Target Achievement %"
+  },
+  {
+   "fieldname": "target_revenue",
+   "fieldtype": "Currency",
+   "label": "Revenue Target (\u20b9)"
+  },
+  {
+   "fieldname": "actual_revenue",
+   "fieldtype": "Currency",
+   "label": "Actual Revenue (\u20b9)"
+  },
+  {
+   "fieldname": "qty_7d",
+   "fieldtype": "Float",
+   "label": "Sales (7d)"
+  },
+  {
+   "fieldname": "qty_14d",
+   "fieldtype": "Float",
+   "label": "Sales (14d)"
+  },
+  {
+   "fieldname": "qty_30d",
+   "fieldtype": "Float",
+   "label": "Sales (30d)"
+  },
+  {
+   "fieldname": "section_customers",
+   "fieldtype": "Section Break",
+   "label": "Customer Acquisition"
+  },
+  {
+   "fieldname": "unique_customers",
+   "fieldtype": "Int",
+   "label": "Unique Customers"
+  },
+  {
+   "fieldname": "customer_growth_pct",
+   "fieldtype": "Percent",
+   "label": "Customer Growth %"
+  },
+  {
+   "fieldname": "avg_order_value",
+   "fieldtype": "Currency",
+   "label": "Avg Order Value (\u20b9)"
+  },
+  {
+   "fieldname": "section_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Analysis"
+  },
+  {
+   "fetch_from": "item_code.stock_qty",
+   "fieldname": "current_stock",
+   "fieldtype": "Float",
+   "label": "Current Stock",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_value",
+   "fieldtype": "Currency",
+   "label": "Stock Value (\u20b9)"
+  },
+  {
+   "fieldname": "days_of_stock",
+   "fieldtype": "Float",
+   "label": "Days of Stock"
+  },
+  {
+   "fieldname": "stockout_risk",
+   "fieldtype": "Select",
+   "label": "Stockout Risk",
+   "options": "NONE\nLOW\nMEDIUM\nHIGH"
+  },
+  {
+   "fieldname": "section_trend",
+   "fieldtype": "Section Break",
+   "label": "Growth & Trend"
+  },
+  {
+   "fieldname": "growth_percentage",
+   "fieldtype": "Percent",
+   "label": "Growth % (vs prior period)"
+  },
+  {
+   "fieldname": "trend_direction",
+   "fieldtype": "Select",
+   "label": "Trend",
+   "options": "UP\nDOWN\nFLAT"
+  },
+  {
+   "fieldname": "momentum",
+   "fieldtype": "Select",
+   "label": "Momentum",
+   "options": "POSITIVE\nNEUTRAL\nNEGATIVE"
+  },
+  {
+   "fieldname": "section_recommendation",
+   "fieldtype": "Section Break",
+   "label": "Recommendations"
+  },
+  {
+   "description": "Action items and next steps",
+   "fieldname": "recommendation",
+   "fieldtype": "Small Text",
+   "label": "Recommendation"
+  },
+  {
+   "fieldname": "action_priority",
+   "fieldtype": "Select",
+   "label": "Action Priority",
+   "options": "URGENT\nHIGH\nMEDIUM\nLOW"
+  },
+  {
+   "fieldname": "section_analysis",
+   "fieldtype": "Section Break",
+   "label": "Analysis Info"
+  },
+  {
+   "fieldname": "analysis_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Analysis Date",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "icon-heart",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-15 08:50:24.927058",
+ "modified_by": "Administrator",
+ "module": "inventory analytics",
+ "name": "new_item_health_report",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "item_code,item_name,health_status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

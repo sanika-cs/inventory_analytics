@@ -1,0 +1,211 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "color": "#4caf50",
+ "creation": "2026-01-15 08:50:22.332504",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "classification",
+  "section_metrics",
+  "velocity_90d",
+  "turnover_rate",
+  "qty_90d",
+  "transaction_count",
+  "avg_transaction_qty",
+  "days_of_stock",
+  "section_sales",
+  "total_qty_sold",
+  "total_sales_value",
+  "last_sale_date",
+  "days_since_last_sale",
+  "section_stock",
+  "current_stock",
+  "stock_value",
+  "avg_valuation_rate",
+  "section_trend",
+  "trend_7d",
+  "trend_30d",
+  "growth_percentage",
+  "section_analysis",
+  "analysis_date",
+  "created_from_notebook"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Classification",
+   "options": "FAST\nSLOW\nMEDIUM\nDEAD_STOCK\nNEW_ITEM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_metrics",
+   "fieldtype": "Section Break",
+   "label": "Key Metrics (90 days)"
+  },
+  {
+   "description": "Average daily sales",
+   "fieldname": "velocity_90d",
+   "fieldtype": "Float",
+   "label": "Velocity (units/day)"
+  },
+  {
+   "description": "Times stock rotates per year",
+   "fieldname": "turnover_rate",
+   "fieldtype": "Float",
+   "label": "Turnover Rate (x/year)"
+  },
+  {
+   "fieldname": "qty_90d",
+   "fieldtype": "Float",
+   "label": "Quantity Sold (90d)"
+  },
+  {
+   "fieldname": "transaction_count",
+   "fieldtype": "Int",
+   "label": "Transaction Count"
+  },
+  {
+   "fieldname": "avg_transaction_qty",
+   "fieldtype": "Float",
+   "label": "Avg Transaction Qty"
+  },
+  {
+   "description": "Current stock \u00f7 daily demand",
+   "fieldname": "days_of_stock",
+   "fieldtype": "Float",
+   "label": "Days of Stock"
+  },
+  {
+   "fieldname": "section_sales",
+   "fieldtype": "Section Break",
+   "label": "Sales Performance"
+  },
+  {
+   "fieldname": "total_qty_sold",
+   "fieldtype": "Float",
+   "label": "Total Qty Sold (lifetime)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_sales_value",
+   "fieldtype": "Currency",
+   "label": "Total Sales Value (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sale_date",
+   "fieldtype": "Date",
+   "label": "Last Sale Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "days_since_last_sale",
+   "fieldtype": "Int",
+   "label": "Days Since Last Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Status"
+  },
+  {
+   "fetch_from": "item_code.stock_qty",
+   "fieldname": "current_stock",
+   "fieldtype": "Float",
+   "label": "Current Stock",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_value",
+   "fieldtype": "Currency",
+   "label": "Stock Value (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "avg_valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Avg Valuation Rate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_trend",
+   "fieldtype": "Section Break",
+   "label": "Trend Analysis"
+  },
+  {
+   "fieldname": "trend_7d",
+   "fieldtype": "Select",
+   "label": "Trend (7d vs 8-14d)",
+   "options": "UP\nDOWN\nFLAT"
+  },
+  {
+   "fieldname": "trend_30d",
+   "fieldtype": "Select",
+   "label": "Trend (30d vs prior 30d)",
+   "options": "UP\nDOWN\nFLAT"
+  },
+  {
+   "fieldname": "growth_percentage",
+   "fieldtype": "Percent",
+   "label": "Growth %"
+  },
+  {
+   "fieldname": "section_analysis",
+   "fieldtype": "Section Break",
+   "label": "Analysis Info"
+  },
+  {
+   "fieldname": "analysis_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Analysis Date",
+   "reqd": 1
+  },
+  {
+   "default": "Notebook 2: DBSCAN Classification",
+   "fieldname": "created_from_notebook",
+   "fieldtype": "Data",
+   "label": "Created From Notebook"
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "icon-tag",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-15 08:50:22.332504",
+ "modified_by": "Administrator",
+ "module": "inventory analytics",
+ "name": "item_classification",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "item_code,item_name,classification",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "color": "#ff9800",
+ "creation": "2026-01-15 08:50:23.026371",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "classification",
+  "section_pattern",
+  "demand_pattern",
+  "adi",
+  "cv_squared",
+  "demand_size",
+  "section_forecast",
+  "qty_30d",
+  "forecast_30d",
+  "forecast_mad",
+  "safety_stock",
+  "reorder_point",
+  "recommended_order_qty",
+  "section_stock",
+  "current_stock",
+  "stock_status",
+  "days_until_stockout",
+  "section_order",
+  "order_priority",
+  "order_value",
+  "recommended_order_date",
+  "avg_lead_time_days",
+  "section_analysis",
+  "analysis_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "label": "Item Classification",
+   "options": "FAST\nSLOW\nMEDIUM"
+  },
+  {
+   "fieldname": "section_pattern",
+   "fieldtype": "Section Break",
+   "label": "Demand Pattern (SBC Method)"
+  },
+  {
+   "description": "Syntetos-Boylan-Croston classification",
+   "fieldname": "demand_pattern",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Demand Pattern",
+   "options": "SMOOTH\nERRATIC\nINTERMITTENT\nLUMPY",
+   "reqd": 1
+  },
+  {
+   "description": "Days between sales transactions",
+   "fieldname": "adi",
+   "fieldtype": "Float",
+   "label": "ADI (Average Demand Interval)"
+  },
+  {
+   "description": "Demand variability metric",
+   "fieldname": "cv_squared",
+   "fieldtype": "Float",
+   "label": "CV\u00b2 (Coefficient of Variation\u00b2)"
+  },
+  {
+   "description": "Average transaction quantity",
+   "fieldname": "demand_size",
+   "fieldtype": "Float",
+   "label": "Demand Size"
+  },
+  {
+   "fieldname": "section_forecast",
+   "fieldtype": "Section Break",
+   "label": "Forecast & Recommendations"
+  },
+  {
+   "fieldname": "qty_30d",
+   "fieldtype": "Float",
+   "label": "Actual Sales (30d)"
+  },
+  {
+   "description": "Next 30 days forecast",
+   "fieldname": "forecast_30d",
+   "fieldtype": "Float",
+   "label": "Forecasted Demand (30d)"
+  },
+  {
+   "description": "Mean Absolute Deviation (accuracy)",
+   "fieldname": "forecast_mad",
+   "fieldtype": "Float",
+   "label": "Forecast MAD"
+  },
+  {
+   "description": "Buffer inventory needed",
+   "fieldname": "safety_stock",
+   "fieldtype": "Float",
+   "label": "Safety Stock (units)"
+  },
+  {
+   "description": "When to place order",
+   "fieldname": "reorder_point",
+   "fieldtype": "Float",
+   "label": "Reorder Point (ROP)"
+  },
+  {
+   "description": "How much to order",
+   "fieldname": "recommended_order_qty",
+   "fieldtype": "Float",
+   "label": "Recommended Order Qty"
+  },
+  {
+   "fieldname": "section_stock",
+   "fieldtype": "Section Break",
+   "label": "Stock Status"
+  },
+  {
+   "fetch_from": "item_code.stock_qty",
+   "fieldname": "current_stock",
+   "fieldtype": "Float",
+   "label": "Current Stock",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_status",
+   "fieldtype": "Select",
+   "label": "Stock Status",
+   "options": "BELOW_ROP\nOK\nABOVE_MAX",
+   "read_only": 1
+  },
+  {
+   "description": "Projected stockout timeline",
+   "fieldname": "days_until_stockout",
+   "fieldtype": "Float",
+   "label": "Days Until Stockout"
+  },
+  {
+   "fieldname": "section_order",
+   "fieldtype": "Section Break",
+   "label": "Order Details"
+  },
+  {
+   "fieldname": "order_priority",
+   "fieldtype": "Select",
+   "label": "Order Priority",
+   "options": "URGENT\nHIGH\nMEDIUM\nLOW"
+  },
+  {
+   "description": "Recommended order qty \u00d7 unit rate",
+   "fieldname": "order_value",
+   "fieldtype": "Currency",
+   "label": "Order Value (\u20b9)"
+  },
+  {
+   "fieldname": "recommended_order_date",
+   "fieldtype": "Date",
+   "label": "Recommended Order Date"
+  },
+  {
+   "fieldname": "avg_lead_time_days",
+   "fieldtype": "Int",
+   "label": "Avg Lead Time (days)"
+  },
+  {
+   "fieldname": "section_analysis",
+   "fieldtype": "Section Break",
+   "label": "Analysis Info"
+  },
+  {
+   "fieldname": "analysis_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Analysis Date",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "icon-line-chart",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-15 08:50:23.026371",
+ "modified_by": "Administrator",
+ "module": "inventory analytics",
+ "name": "demand_pattern_analysis",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "item_code,item_name,demand_pattern",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

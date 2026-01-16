@@ -1,5 +1,5 @@
 {
-  "name": "Item Classification",
+  "name": "item_classification",
   "doctype": "DocType",
   "document_type": "Document",
   "module": "Inventory Analytics",

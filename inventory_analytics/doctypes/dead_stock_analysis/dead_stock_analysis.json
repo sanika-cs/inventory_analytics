@@ -1,5 +1,5 @@
 {
-  "name": "Dead Stock Analysis",
+  "name": "dead_stock_analysis",
   "doctype": "DocType",
   "document_type": "Document",
   "module": "Inventory Analytics",

@@ -6,37 +6,37 @@
     {
       "name": "Classification Breakdown",
       "chart_name": "Item Classification Breakdown",
-      "width": "full"
+      "width": "Full"
     },
     {
       "name": "Inventory Health KPI",
       "chart_name": "Inventory Health Metrics",
-      "width": "half"
+      "width": "Half"
     },
     {
       "name": "Demand Forecast",
       "chart_name": "Demand Pattern Distribution",
-      "width": "half"
+      "width": "Half"
     },
     {
       "name": "Dead Stock Impact",
       "chart_name": "Dead Stock Value Distribution",
-      "width": "half"
+      "width": "Half"
     },
     {
       "name": "New Items Performance",
       "chart_name": "New Items Health Status",
-      "width": "half"
+      "width": "Half"
     },
     {
       "name": "Days of Stock",
       "chart_name": "Days of Stock Distribution",
-      "width": "full"
+      "width": "Full"
     },
     {
       "name": "Critical Alerts",
       "chart_name": "Critical Inventory Alerts",
-      "width": "full"
+      "width": "Full"
     }
   ],
   "cards": [

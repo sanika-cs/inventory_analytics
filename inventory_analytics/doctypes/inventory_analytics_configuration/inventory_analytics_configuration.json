@@ -1,5 +1,5 @@
 {
-  "name": "Inventory Analytics Configuration",
+  "name": "inventory_analytics_configuration",
   "doctype": "DocType",
   "document_type": "Setup",
   "module": "Inventory Analytics",
@@ -121,12 +121,6 @@
       "fieldtype": "Currency",
       "default": 100,
       "description": "Items below this value auto write-off"
-    },
-    {
-      "fieldname": "liquidation_tiers",
-      "label": "Liquidation Discount Tiers",
-      "fieldtype": "Table",
-      "options": "Liquidation Tier"
     }
   ],
   "icon": "icon-cog",

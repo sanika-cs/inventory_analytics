@@ -1,5 +1,5 @@
 {
-  "name": "New Item Health Report",
+  "name": "new_item_health_report",
   "doctype": "DocType",
   "document_type": "Document",
   "module": "Inventory Analytics",

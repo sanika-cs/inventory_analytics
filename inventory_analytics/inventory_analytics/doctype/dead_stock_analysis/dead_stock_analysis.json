@@ -1,0 +1,255 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "color": "#f44336",
+ "creation": "2026-01-15 08:50:24.660851",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "section_deadstock",
+  "days_since_last_sale",
+  "last_sale_date",
+  "age_years",
+  "section_value",
+  "current_stock",
+  "stock_value",
+  "original_value",
+  "holding_cost_total",
+  "holding_cost_annual",
+  "section_liquidation",
+  "liquidation_strategy",
+  "discount_percentage",
+  "recovery_percentage",
+  "recovery_value",
+  "liquidity_score",
+  "timeline_months",
+  "section_root",
+  "probable_causes",
+  "category_issue",
+  "section_action",
+  "priority",
+  "action_status",
+  "action_plan",
+  "target_clearance_date",
+  "responsible_person",
+  "section_financial",
+  "impact_quarterly",
+  "roi_recovery",
+  "section_analysis",
+  "analysis_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_deadstock",
+   "fieldtype": "Section Break",
+   "label": "Dead Stock Status"
+  },
+  {
+   "fieldname": "days_since_last_sale",
+   "fieldtype": "Int",
+   "label": "Days Since Last Sale",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sale_date",
+   "fieldtype": "Date",
+   "label": "Last Sale Date",
+   "read_only": 1
+  },
+  {
+   "description": "Time inventory has been dead",
+   "fieldname": "age_years",
+   "fieldtype": "Float",
+   "label": "Dead Stock Age (years)"
+  },
+  {
+   "fieldname": "section_value",
+   "fieldtype": "Section Break",
+   "label": "Value Analysis"
+  },
+  {
+   "fetch_from": "item_code.stock_qty",
+   "fieldname": "current_stock",
+   "fieldtype": "Float",
+   "label": "Current Stock",
+   "read_only": 1
+  },
+  {
+   "description": "Current market value",
+   "fieldname": "stock_value",
+   "fieldtype": "Currency",
+   "label": "Stock Value (\u20b9)"
+  },
+  {
+   "fieldname": "original_value",
+   "fieldtype": "Currency",
+   "label": "Original Purchase Value (\u20b9)"
+  },
+  {
+   "description": "Cost to hold until now",
+   "fieldname": "holding_cost_total",
+   "fieldtype": "Currency",
+   "label": "Total Holding Cost (\u20b9)"
+  },
+  {
+   "fieldname": "holding_cost_annual",
+   "fieldtype": "Currency",
+   "label": "Annual Holding Cost (\u20b9)"
+  },
+  {
+   "fieldname": "section_liquidation",
+   "fieldtype": "Section Break",
+   "label": "Liquidation Strategy"
+  },
+  {
+   "description": "Recommended liquidation approach",
+   "fieldname": "liquidation_strategy",
+   "fieldtype": "Select",
+   "label": "Liquidation Strategy",
+   "options": "DEEP_DISCOUNT\nCLEARANCE\nDONATION\nWRITE_OFF"
+  },
+  {
+   "description": "Recommended discount level",
+   "fieldname": "discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Discount % (Strategy)"
+  },
+  {
+   "description": "Expected recovery of stock value",
+   "fieldname": "recovery_percentage",
+   "fieldtype": "Percent",
+   "label": "Recovery %"
+  },
+  {
+   "description": "Expected liquidation proceeds",
+   "fieldname": "recovery_value",
+   "fieldtype": "Currency",
+   "label": "Potential Recovery (\u20b9)"
+  },
+  {
+   "description": "Ease of liquidation",
+   "fieldname": "liquidity_score",
+   "fieldtype": "Int",
+   "label": "Liquidity Score (0-100)"
+  },
+  {
+   "fieldname": "timeline_months",
+   "fieldtype": "Int",
+   "label": "Liquidation Timeline (months)"
+  },
+  {
+   "fieldname": "section_root",
+   "fieldtype": "Section Break",
+   "label": "Root Cause Analysis"
+  },
+  {
+   "fieldname": "probable_causes",
+   "fieldtype": "Small Text",
+   "label": "Probable Causes"
+  },
+  {
+   "fieldname": "category_issue",
+   "fieldtype": "Select",
+   "label": "Category Issue",
+   "options": "OBSOLESCENCE\nSLOW_DEMAND\nOVERSTOCK\nPOOR_FORECAST\nMARKET_CHANGE\nUNCLAR"
+  },
+  {
+   "fieldname": "section_action",
+   "fieldtype": "Section Break",
+   "label": "Action Plan"
+  },
+  {
+   "description": "Liquidation priority",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "CRITICAL\nHIGH\nMEDIUM\nLOW"
+  },
+  {
+   "fieldname": "action_status",
+   "fieldtype": "Select",
+   "label": "Action Status",
+   "options": "PENDING\nIN_PROGRESS\nCOMPLETED"
+  },
+  {
+   "fieldname": "action_plan",
+   "fieldtype": "Small Text",
+   "label": "Action Plan"
+  },
+  {
+   "fieldname": "target_clearance_date",
+   "fieldtype": "Date",
+   "label": "Target Clearance Date"
+  },
+  {
+   "fieldname": "responsible_person",
+   "fieldtype": "Link",
+   "label": "Responsible Person",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_financial",
+   "fieldtype": "Section Break",
+   "label": "Financial Impact"
+  },
+  {
+   "fieldname": "impact_quarterly",
+   "fieldtype": "Select",
+   "label": "Quarterly Impact",
+   "options": "IMMEDIATE\nQ1\nQ2\nQ3\nQ4"
+  },
+  {
+   "fieldname": "roi_recovery",
+   "fieldtype": "Percent",
+   "label": "ROI of Recovery"
+  },
+  {
+   "fieldname": "section_analysis",
+   "fieldtype": "Section Break",
+   "label": "Analysis Info"
+  },
+  {
+   "fieldname": "analysis_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Analysis Date",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "icon": "icon-trash",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-15 08:50:24.660851",
+ "modified_by": "Administrator",
+ "module": "inventory analytics",
+ "name": "dead_stock_analysis",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "item_code,item_name,priority",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
